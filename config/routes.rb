@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  root 'pages#index'
+
+  resources :pages do
+    collection do
+      get 'index'
+      get 'download'
+      get 'about'
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
