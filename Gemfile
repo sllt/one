@@ -17,6 +17,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # bootstrap 
 gem 'bootstrap-sass',       '3.2.0.0'
 
+# crypt
+gem 'bcrypt-ruby'
+
 # form
 gem 'simple_form'
 

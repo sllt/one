@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+
+
   root 'pages#index'
 
+  resources :users
+  
   resources :pages do
     collection do
       get 'index'

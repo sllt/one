@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: "hello@sllt.me"
+  name: "sllt"
+  password_digest: "hello123"
+  avatar: "/default.png"
+
+two:
+  email: MyString
+  name: MyString
+  password_digest: MyString
+  avatar: MyString
