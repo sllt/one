@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root 'pages#index'
 
   resources :users
+
+  get "signup"  => "users#new", as: :signup
   
   resources :pages do
     collection do

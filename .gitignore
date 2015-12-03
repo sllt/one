@@ -13,3 +13,5 @@
 /tmp
 spring/*.pid
 config/database.yml
+
+.byebug_history

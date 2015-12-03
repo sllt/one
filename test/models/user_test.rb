@@ -18,4 +18,10 @@ class UserTest < ActiveSupport::TestCase
     @user.save
     assert_equal @user.email, "hello@sllt.me"
   end
+
+  test "should user password minimum 6" do
+    @user.password = @user.password_confirmation = "123"
+
+    assert_not @user.valid?
+  end
 end
