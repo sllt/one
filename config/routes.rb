@@ -1,11 +1,21 @@
 Rails.application.routes.draw do
 
 
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   root 'pages#index'
 
   resources :users
 
-  get "signup"  => "users#new", as: :signup
+  get        "signup"    => "users#new", as: :signup
+
+  get        "login"     => "sessions#new", as: :login
+  post       "login"     => "sessions#create"
+  delete     "logout"    => "sessions#destroy"
   
   resources :pages do
     collection do
