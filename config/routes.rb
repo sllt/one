@@ -1,3 +1,5 @@
+require "dispatch"
+
 Rails.application.routes.draw do
 
 
@@ -24,6 +26,8 @@ Rails.application.routes.draw do
       get 'about'
     end
   end
+
+  mount Api::Dispatch => '/api'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

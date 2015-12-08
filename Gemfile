@@ -23,6 +23,14 @@ gem 'bcrypt-ruby'
 # form
 gem 'simple_form'
 
+# API
+
+gem 'grape'
+gem 'grape-swagger'
+gem 'active_model_serializers'
+gem 'grape-active_model_serializers'
+
+
 # i18n
 gem 'rails-i18n', '~> 4.0.0'
 
