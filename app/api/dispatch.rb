@@ -1,3 +1,5 @@
+require 'grape-swagger'
+
 module Api
   class Dispatch < Grape::API
     use ActionDispatch::RemoteIp
@@ -11,5 +13,7 @@ module Api
       status 404
       { error: 'Page not found.' }
     end
+
+    add_swagger_documentation
   end
 end
