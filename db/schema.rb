@@ -11,7 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202082916) do
+ActiveRecord::Schema.define(version: 20151212024940) do
+
+  create_table "attachments", force: :cascade do |t|
+    t.string   "src",        limit: 255
+    t.string   "type",       limit: 255
+    t.integer  "user_id",    limit: 4
+    t.integer  "topic_id",   limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "reply_id",   limit: 4
+  end
+
+  create_table "replies", force: :cascade do |t|
+    t.string   "content",    limit: 255
+    t.integer  "user_id",    limit: 4
+    t.integer  "topic_id",   limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.text     "content",    limit: 65535
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           limit: 255

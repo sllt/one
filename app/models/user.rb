@@ -10,4 +10,7 @@ class User < ActiveRecord::Base
     before_save { self.email = self.email.downcase }
 
     has_secure_password
+
+    has_many :topics
+    has_many :replies
 end

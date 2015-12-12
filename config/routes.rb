@@ -19,13 +19,17 @@ Rails.application.routes.draw do
   post       "login"     => "sessions#create"
   delete     "logout"    => "sessions#destroy"
   
-  resources :pages do
+  resources :pages, only: [] do
     collection do
       get 'index'
       get 'download'
       get 'about'
     end
   end
+
+  resources :topics
+  resources :replies
+  resources :attachments
 
   mount Api::Dispatch => '/api'
   # The priority is based upon order of creation: first created -> highest priority.
