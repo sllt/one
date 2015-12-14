@@ -21,5 +21,12 @@ module V1
         def logged_in?
             !current_user.nil?
         end
+
+        def remember(user)
+            user.remember
+            cookies[:token] = {
+                value: user.remember_token
+            }
+        end
     end
 end

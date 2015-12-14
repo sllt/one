@@ -16,13 +16,25 @@ module V1
                 requires :email, type: String, desc: 'user email.'
                 requires :password, type: String, desc: 'user password.'
             end
-            post do
+            post :login do
                 user = User.find_by(email: params[:email])
                 if user && user.authenticate(params[:password])
                     log_in user
+                    remember user
                     user
                 end
             end
+
+            desc "user logout"
+            params do
+
+            end
+            post :logout do
+                if logged_in?
+                    log_out
+                end
+            end
+
 
         end
     end
