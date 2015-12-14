@@ -11,13 +11,19 @@ module V1
                 end
             end
 
-
-            desc "return user's topics"
+            desc "user login"
             params do
-                requires :id, type: Integer, desc: 'user id.'
+                requires :email, type: String, desc: 'user email.'
+                requires :password, type: String, desc: 'user password.'
+            end
+            post do
+                user = User.find_by(email: params[:email])
+                if user && user.authenticate(params[:password])
+                    log_in user
+                    user
+                end
             end
 
-            get
         end
     end
 end
