@@ -124,3 +124,45 @@ input, textarea, select, .uneditable-input {
 input {
   height: auto !important;
 }
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+/* topic */
+
+.new_topic {
+  textarea {
+    max-height: 100px;
+  }
+}
+
+/* list topic - index */
+
+.list-topics {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+  .topic {
+    height: 180px;
+    font-family: Roboto,"Helvetica Neue","Segoe UI",Verdana,Tahoma,"Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+    font-size: 20px;
+    text-align: left;
+    color: inherit;
+    line-height: 1.6;
+    font-weight: 400;
+    // fon
+  }
+}

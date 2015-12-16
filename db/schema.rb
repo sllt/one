@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214143120) do
+ActiveRecord::Schema.define(version: 20151215112018) do
 
   create_table "attachments", force: :cascade do |t|
     t.string   "src",        limit: 255
@@ -21,6 +21,12 @@ ActiveRecord::Schema.define(version: 20151214143120) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.integer  "reply_id",   limit: 4
+  end
+
+  create_table "customs", force: :cascade do |t|
+    t.text     "style",      limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "replies", force: :cascade do |t|
@@ -44,9 +50,10 @@ ActiveRecord::Schema.define(version: 20151214143120) do
     t.string   "name",            limit: 255
     t.string   "password_digest", limit: 255
     t.string   "avatar",          limit: 255
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
     t.string   "remember_digest", limit: 255
+    t.boolean  "admin",                       default: false
   end
 
 end

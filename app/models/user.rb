@@ -6,14 +6,15 @@ class User < ActiveRecord::Base
         format: {with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
         uniqueness: true
 
-    validates :password, length: { minimum: 6 }
+    validates :password, length: { minimum: 6 }, allow_nil: true
 
     before_save { self.email = self.email.downcase }
 
     has_secure_password
 
-    has_many :topics
-    has_many :replies
+    has_many :topics, dependent: :destroy
+    has_many :replies, dependent: :destroy
+    has_many :customs, dependent: :destroy
 
     def self.new_token
         SecureRandom.urlsafe_base64
@@ -30,7 +31,12 @@ class User < ActiveRecord::Base
     end
 
     def authenticated?(remember_token)
+        return false if remember_digest.nil?
         BCrypt::Password.new(remember_digest).is_password?(remember_token)
+    end
+
+    def forget
+        update_attribute(:remember_digest, nil)
     end
 
 end

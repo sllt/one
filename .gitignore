@@ -15,3 +15,6 @@ spring/*.pid
 config/database.yml
 
 .byebug_history
+
+
+.DS_Store
