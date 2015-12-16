@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
     attr_accessor :remember_token
+    mount_uploader :avatar, AvatarUploader
+
     validates :name, presence: true, length: { maximum: 15 }
     
     validates :email, presence: true, length: { maximum: 50 },

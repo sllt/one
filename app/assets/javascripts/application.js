@@ -14,16 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
-//= require ./simditor/module
-//= require ./simditor/hotkeys
-//= require ./simditor/uploader
-//= require ./simditor/simditor
-
+//= require dropzone
 //= require_tree .
 
-
-var editor = new Simditor({
-  textarea: $('#editor')
-  //optional options
-});
 

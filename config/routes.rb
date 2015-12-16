@@ -29,7 +29,7 @@ Rails.application.routes.draw do
 
   resources :topics
   resources :replies
-  resources :attachments
+  resources :attachments, only: [:create, :destroy]
 
   mount Api::Dispatch => '/api'
   # The priority is based upon order of creation: first created -> highest priority.

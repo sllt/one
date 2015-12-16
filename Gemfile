@@ -23,12 +23,19 @@ gem 'bcrypt-ruby'
 # form
 gem 'simple_form'
 
+# image upload
+gem 'carrierwave'
+gem 'cloudinary'
+
 # API
 
 gem 'grape'
 gem 'grape-swagger'
 gem 'active_model_serializers'
 gem 'grape-active_model_serializers'
+
+# drag file upload
+gem 'dropzonejs-rails'
 
 
 # i18n
